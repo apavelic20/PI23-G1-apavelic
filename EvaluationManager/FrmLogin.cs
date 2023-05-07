@@ -12,8 +12,8 @@ namespace EvaluationManager
 {
     public partial class FrmLogin : Form
     {
-        string username = "nastavnik";
-        string password = "test";
+        string username = "adrian";
+        string password = "lozinka";
 
         public FrmLogin()
         {
@@ -51,8 +51,11 @@ namespace EvaluationManager
             {
                 if (txtIme.Text == username && txtLozinka.Text == password)
                 {
-                    MessageBox.Show("Dobrodošli!", "Prijavljeni ste",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FrmStudents frmStudents = new FrmStudents();
+                    Hide();
+                    frmStudents.ShowDialog();
+                    Close();
+
                 }
                 else
                 {
@@ -60,7 +63,6 @@ namespace EvaluationManager
                     MessageBoxIcon.Error);
                 }
             }
-
         }
 
         private void txtIme_TextChanged(object sender, EventArgs e)
